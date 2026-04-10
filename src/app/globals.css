@@ -1,26 +1,148 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ===== Tailwind v4 — Design Tokens ===== */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* ---------- Material Design 3 Palette ---------- */
+  --color-primary: #d5e3ff;
+  --color-on-primary: #04305f;
+  --color-primary-container: #a7c8ff;
+  --color-on-primary-container: #315383;
+  --color-primary-fixed: #d5e3ff;
+  --color-primary-fixed-dim: #a7c8ff;
+  --color-on-primary-fixed: #001b3b;
+  --color-on-primary-fixed-variant: #244776;
+  --color-inverse-primary: #3e5f90;
+
+  --color-secondary: #bbc7df;
+  --color-on-secondary: #253144;
+  --color-secondary-container: #3e4a5d;
+  --color-on-secondary-container: #adb9d0;
+  --color-secondary-fixed: #d7e3fc;
+  --color-secondary-fixed-dim: #bbc7df;
+  --color-on-secondary-fixed: #101c2e;
+  --color-on-secondary-fixed-variant: #3c475b;
+
+  --color-tertiary: #ffdeab;
+  --color-on-tertiary: #422c00;
+  --color-tertiary-container: #efbf6d;
+  --color-on-tertiary-container: #6e4c00;
+  --color-tertiary-fixed: #ffdeab;
+  --color-tertiary-fixed-dim: #efbf6d;
+  --color-on-tertiary-fixed: #271900;
+  --color-on-tertiary-fixed-variant: #5f4100;
+
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+
+  --color-background: #131313;
+  --color-on-background: #e5e2e1;
+  --color-surface: #131313;
+  --color-on-surface: #e5e2e1;
+  --color-surface-dim: #131313;
+  --color-surface-bright: #393939;
+  --color-surface-variant: #353534;
+  --color-on-surface-variant: #c3c6d0;
+  --color-surface-tint: #a7c8ff;
+  --color-surface-container: #201f1f;
+  --color-surface-container-low: #1c1b1b;
+  --color-surface-container-high: #2a2a2a;
+  --color-surface-container-highest: #353534;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-inverse-surface: #e5e2e1;
+  --color-inverse-on-surface: #313030;
+
+  --color-outline: #8d919a;
+  --color-outline-variant: #43474f;
+
+  /* ---------- Font Families ---------- */
+  --font-headline: var(--font-manrope), system-ui, sans-serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+  --font-label: var(--font-space-grotesk), system-ui, sans-serif;
+
+  /* ---------- Border Radius ---------- */
+  --radius: 1rem;
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* ===== Base Styles ===== */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+/* ===== Selection highlight ===== */
+::selection {
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+}
+
+/* ===== Grain Overlay (CSS-only, GPU-accelerated) ===== */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  /* Promote to GPU layer — prevents main-thread repaints on scroll */
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* ===== Glow Spheres ===== */
+.glow-sphere {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(167, 200, 255, 0.08) 0%,
+    rgba(19, 19, 19, 0) 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ===== Workflow Stepper ===== */
+.step-node {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.step-active .step-node {
+  background-color: #a7c8ff;
+  color: #04305f;
+  box-shadow: 0 0 20px rgba(167, 200, 255, 0.3);
+}
+
+.step-active .material-symbols-outlined {
+  font-variation-settings: "FILL" 1 !important;
+}
+
+/* Scroll-driven progress line */
+.progress-line-container {
+  view-timeline-name: --section-main;
+  view-timeline-axis: block;
+}
+
+.progress-line-fill {
+  height: 0%;
+  animation: grow-line linear both;
+  animation-timeline: --section-main;
+  animation-range: entry 50% exit 50%;
+}
+
+@keyframes grow-line {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
 }
