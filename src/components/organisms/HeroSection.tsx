@@ -1,9 +1,21 @@
+"use client";
+
 import { SectionLabel, Button } from "@/components/atoms";
+import { motion } from "motion/react";
+import { ANIMATION_VARIANTS, TRANSITION } from "@/lib/animations";
 
 export default function HeroSection() {
   return (
-    <section className="min-h-[819px] flex flex-col justify-center max-w-5xl mb-64">
-      <div className="space-y-4 mb-12">
+    <motion.section
+      initial="initial"
+      animate="animate"
+      variants={ANIMATION_VARIANTS.staggerContainer}
+      className="min-h-[819px] flex flex-col justify-center max-w-5xl mb-64"
+    >
+      <motion.div
+        variants={ANIMATION_VARIANTS.fadeUp}
+        className="space-y-4 mb-12"
+      >
         <SectionLabel className="tracking-[0.25em]">
           Full-Stack Software Engineer
         </SectionLabel>
@@ -14,15 +26,18 @@ export default function HeroSection() {
 
         <p className="text-xl md:text-2xl text-on-surface-variant font-body max-w-2xl pt-6">
           Desarrollo aplicaciones web escalables y de alto rendimiento con
-          Next.js, Supabase y TypeScript. Obsesionado con la velocidad,
-          la arquitectura limpia y las soluciones modernas.
+          Next.js, Supabase y TypeScript. Obsesionado con la velocidad, la
+          arquitectura limpia y las soluciones modernas.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="flex flex-col sm:flex-row gap-6">
+      <motion.div
+        variants={ANIMATION_VARIANTS.fadeUp}
+        className="flex flex-col sm:flex-row gap-6"
+      >
         <Button variant="primary">Hablemos de tu Proyecto</Button>
         <Button variant="ghost">Ver Catálogo de Templates</Button>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }

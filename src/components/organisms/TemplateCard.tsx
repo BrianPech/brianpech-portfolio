@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import { Icon } from "@/components/atoms";
 import type { TemplateItem } from "@/lib/constants";
+import { motion } from "motion/react";
+import { MD3_EASING } from "@/lib/animations";
 
 interface TemplateCardProps {
   template: TemplateItem;
@@ -16,15 +20,26 @@ export default function TemplateCard({ template }: TemplateCardProps) {
     template;
 
   return (
-    <div className="bg-surface-container-low rounded-lg overflow-hidden group">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.4, ease: MD3_EASING.decelerated }}
+      whileHover={{
+        y: -8,
+        transition: { duration: 0.3, ease: MD3_EASING.standard },
+      }}
+      className="bg-surface-container-low rounded-lg overflow-hidden group shadow-xl"
+    >
       {/* Image */}
-      <div className="h-64 relative">
+      <div className="h-64 relative overflow-hidden">
         <Image
           src={imageSrc}
           alt={imageAlt}
           fill
           loading="lazy"
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          className="object-cover group-hover:scale-105"
+          style={{ transition: "transform 0.5s cubic-bezier(0.2, 0, 0, 1)" }}
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
         <div className="absolute top-4 right-4">
@@ -63,6 +78,6 @@ export default function TemplateCard({ template }: TemplateCardProps) {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
