@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Brian Pech — Full-Stack Software Engineer
+> Ingeniería de precisión centrada en el rendimiento, la escalabilidad y soluciones multiplataforma.
 
-## Getting Started
+[![Next.js](https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Supabase](https://img.shields.io/badge/Supabase-Backend-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/)
+[![pnpm](https://img.shields.io/badge/pnpm-Managed-F69220?style=for-the-badge&logo=pnpm&logoColor=white)](https://pnpm.io/)
 
-First, run the development server:
+Este repositorio contiene el código fuente de mi portafolio profesional v2. Una plataforma construida desde los cimientos con una arquitectura **Server-First**, diseñada para ofrecer métricas de rendimiento perfectas y una experiencia de usuario fluida inspirada en la estética de Material Design 3.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🏆 Autoridad Técnica y Logros
+Mi enfoque en el desarrollo no es solo teórico; está respaldado por la resolución de problemas en entornos competitivos:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Reconocimiento Estatal:** 3er lugar en el Concurso de Prototipos y Desarrollo de Software (Etapas Local y Estatal).
+- **Alcance Nacional:** Participante en el certamen nacional de desarrollo de software, representando la excelencia técnica regional.
+- **Hackathon Champion:** 1er lugar en hackatones de nivel medio superior.
+- **Formación Sólida:** - Ingeniería en Desarrollo de Software Multiplataforma (UTRM).
+  - Técnico en Programación titulado (CBTIS 72).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠️ Stack Tecnológico (Core)
+Elegido por su capacidad de respuesta y eficiencia en el manejo de datos:
 
-To learn more about Next.js, take a look at the following resources:
+- **Frontend:** Next.js 15 (App Router), React, Tailwind CSS.
+- **Componentes:** shadcn/ui & Framer Motion (Interacciones aceleradas por hardware).
+- **Backend & Data:** Supabase (PostgreSQL), Edge Functions, Auth.
+- **Herramientas:** pnpm, ESLint, Prettier, Git Flow.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📈 Ingeniería de Rendimiento (Lighthouse)
+*Actualmente optimizando para alcanzar el "Perfect Score" en entornos de producción.*
 
-## Deploy on Vercel
+| Categoría | Estado | Meta |
+| :--- | :--- | :--- |
+| Performance | 🟡 84+ | 🟢 95+ |
+| Accessibility | 🟢 98 | 🟢 100 |
+| Best Practices | 🟢 100 | 🟢 100 |
+| SEO | 🟢 100 | 🟢 100 |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🧪 Laboratorio de I+D (Proyectos en Desarrollo)
+Más allá de este portafolio, mi enfoque se centra en crear herramientas que resuelvan necesidades reales del mercado:
+
+1. **Sistema POS Modular:** Gestión de puntos de venta para restaurantes con sincronización en tiempo real.
+2. **K'anPro:** Plataforma de servicios profesionales y búsqueda de empleo.
+3. **Naatly:** Aplicación educativa para la preservación de la lengua maya.
+
+---
+
+## 💻 Configuración Local
+Desarrollado y testeado nativamente en **EndeavourOS (Linux)** con shell **Fish**.
+
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/BrianPech/brianpech-portfolio.git](https://github.com/BrianPech/brianpech-portfolio.git)
+   ```
+
+2.  **Instalar dependencias con pnpm:**
+
+    ```bash
+    pnpm install
+    ```
+
+3.  **Variables de Entorno:**
+    Crea un archivo `.env.local` con tus credenciales de Supabase:
+
+    ```env
+    NEXT_PUBLIC_SUPABASE_URL=tu_url
+    NEXT_PUBLIC_SUPABASE_ANON_KEY=tu_key
+    ```
+
+4.  **Correr servidor de desarrollo:**
+
+    ```bash
+    pnpm dev
+    ```
+
+-----
+
+## 📧 Hablemos
+
+¿Buscas una solución técnica robusta o un template de alto rendimiento?
+
+  - **GitHub:** [@BrianPech](https://www.google.com/search?q=https://github.com/BrianPech)
+  - **Freelance:** Fiverr / Upwork (Links próximamente)
+
+-----
+
+Copyright (c) 2026 **Brian Pech** - Bajo Licencia MIT.
