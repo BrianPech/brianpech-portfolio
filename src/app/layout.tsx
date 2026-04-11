@@ -1,31 +1,7 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import MaterialSymbolsLoader from "@/components/atoms/MaterialSymbolsLoader";
+import { manrope, inter, spaceGrotesk } from "./fonts";
 import "./globals.css";
-
-/* ===== Local Fonts (self-hosted, zero network dependency) ===== */
-const manrope = localFont({
-  src: [
-    { path: "../../public/fonts/manrope-700.woff2", weight: "700" },
-    { path: "../../public/fonts/manrope-800.woff2", weight: "800" },
-  ],
-  variable: "--font-manrope",
-  display: "swap",
-});
-
-const inter = localFont({
-  src: "../../public/fonts/inter-400.woff2",
-  weight: "400",
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const spaceGrotesk = localFont({
-  src: "../../public/fonts/space-grotesk-500.woff2",
-  weight: "500",
-  variable: "--font-space-grotesk",
-  display: "swap",
-});
 
 /* ===== SEO Metadata ===== */
 export const metadata: Metadata = {
@@ -47,10 +23,7 @@ export default function RootLayout({
     >
       <head>
         {/* Preconnect for external images only */}
-        <link
-          rel="preconnect"
-          href="https://lh3.googleusercontent.com"
-        />
+        <link rel="preconnect" href="https://lh3.googleusercontent.com" />
         <link rel="dns-prefetch" href="https://lh3.googleusercontent.com" />
 
         {/* Fallback for browsers with JS disabled */}
