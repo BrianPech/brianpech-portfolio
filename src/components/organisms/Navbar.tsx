@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { NAV_LINKS } from "@/lib/constants";
 import { NavLink, IconButton } from "@/components/molecules";
 
@@ -6,9 +7,12 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full z-50 bg-zinc-900/80 backdrop-blur-xl shadow-2xl shadow-blue-500/5">
       <div className="flex items-center justify-between px-8 py-4 max-w-full">
         {/* Logo */}
-        <div className="text-xl font-bold tracking-tighter text-white font-headline">
+        <Link
+          href="#"
+          className="text-xl font-bold tracking-tighter text-white font-headline"
+        >
           BRIAN PECH
-        </div>
+        </Link>
 
         {/* Navigation Links — hidden on mobile */}
         <div className="hidden md:flex items-center gap-10">
